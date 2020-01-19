@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Read</title>
+</head>
+<body>
+    <h1>제목: {{ article.title }}</h1>
+    <p>내용: {{ article.content }}</p>
+    <p>작성일: {{ article.created_at }}</p>
+    <form action="/articles/delete/{{ article.id }}" method="POST">
+        {% csrf_token %}
+        <input type="submit" value="삭제하기">
+    </form>
+</body>
+</html>
